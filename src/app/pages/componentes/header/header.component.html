@@ -1,0 +1,142 @@
+
+
+
+
+
+
+
+<header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light fondo menu-web" id="ftco-navbar">
+    <div class="container d-flex align-items-center" style="padding: 10px;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menú
+      </button>
+      <div class="col-md-4 d-flex align-items-center py-2">
+        <img src="assets/images/logo.png" alt="ADCONTUR" style="width: 90%;" class="lgo1">
+        <img src="assets/images/logoBlanco.png" alt="ADCONTUR" style="width: 90%;" class="lgo2">
+      </div>
+  
+      <div class="collapse navbar-collapse clase" id="ftco-nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a href="/" class="nav-link" style="font-size: 15px !important;">Inicio</a></li>
+          <li class="nav-item">
+            <a href="/#servicios_" class="nav-link" style="font-size: 15px !important;">Servicios</a>
+            <ul class="dropdown-menu" style="background-color: #13683b; width: 260px !important; min-width: 260px !important;">
+  
+              <!-- <% for(var i=0; i < data.length; i++) { %>
+                <li>
+                  <a href="<%= data[i].path + '?idServicio=' + data[i]. idServicio %>"
+                    style="font-size: 15px !important;">
+                    <%= data[i].titulo %>
+                  </a>
+                </li>
+                <% } %> -->
+  
+                  <li>
+                    <a href="/linea" style="font-size: 15px !important;">Recursos en Línea</a>
+                  </li>
+  
+            </ul>
+          </li>
+          <li class="nav-item"><a href="/temas" class="nav-link" style="font-size: 15px !important;">Temas de
+              Interés</a></li>
+          <li class="nav-item"><a href="/trabaja" class="nav-link" style="font-size: 15px !important;">Trabaja con
+              Nosotros</a></li>
+          <li class="nav-item">
+            <a href="/linea" class="nav-link" style="font-size: 15px !important;">
+              Recursos en Línea
+            </a>
+  
+            <ul class="dropdown-menu"
+              style="background-color: #13683b; width: 260px !important; min-width: 260px !important;">
+  
+              <li>
+                <a  style="font-size: 15px !important;">Recursos en línea SRI</a> <!-- (click)="verificarCredencialesLink(1)" -->
+              </li>
+              <li>
+                <a  style="font-size: 15px !important;">Recursos en línea IESS</a> <!-- (click)="verificarCredencialesLink(2)" -->
+              </li>
+              <li>
+                <a  style="font-size: 15px !important;">Recursos en línea MRL</a> <!-- (click)="verificarCredencialesLink(3)" -->
+              </li>
+              <li>
+                <a style="font-size: 15px !important;">Recursos en línea SUPERCIAS</a> <!-- (click)="verificarCredencialesLink(4)"  -->
+              </li>
+              <li>
+                <a style="font-size: 15px !important;">Recursos en línea MUNICIPIO</a> <!-- (click)="verificarCredencialesLink(5)" -->
+              </li>
+              <li>
+                <a (click)="verificarCredencialesLink(6)" style="font-size: 15px !important;">Otros recursos en línea</a>
+              </li>
+  
+            </ul>
+          </li>
+        </ul>
+  
+      </div>
+    </div>
+  </nav>
+  
+  <nav class="menu-movil menu-movil-line"
+    style="position: -webkit-sticky !important; position: sticky !important; top: 0px !important; z-index: 40 !important;">
+    <button class="btn-menu" id="btnMenu" (click)="menu()">
+      <img src="assets/images/menu.png" alt="*" width="20"> &nbsp; Menú
+    </button>
+  
+    <ul class="lista-items-movil" id="menu-movil">
+      <li><a href="/">Inicio</a></li>
+      <li id="btn-Servicios" (click)="servicios()">
+        <a>Servicios <span>></span></a>
+        <div id="menu-servicios" style="padding: 10px;">
+          <!-- <% for(var i=0; i < data.length; i++) { %>
+            <div class="submenu">
+              <a href="<%= data[i].path + '?idServicio=' + data[i]. idServicio %>" style="font-size: 15px !important;">
+                <%= data[i].titulo %>
+              </a>
+            </div>
+            <% } %> -->
+  
+              <div class="submenu">
+                <a href="/linea" style="font-size: 15px !important;">Recursos en Línea</a>
+              </div>
+  
+        </div>
+      </li>
+      <li><a href="/temas">Temas de Interés</a></li>
+      <li><a href="/trabaja">Trabaja con Nosotros</a></li>
+      <li id="btn-linea" (click)="linea()">
+        <a>Recursos en Línea <span>></span></a>
+  
+        <div style="padding: 10px;" id="menu-linea">
+          <div class="submenu">
+            <a href="/linea" style="font-size: 15px !important;">Recursos en Línea</a>
+          </div>
+          <div class="submenu">
+            <a href="/lineaDetalles?idRecursoLinea=1" style="font-size: 15px !important;">Recursos en línea SRI</a>
+          </div>
+          <div class="submenu">
+            <a href="/lineaDetalles?idRecursoLinea=2" style="font-size: 15px !important;">Recursos en línea IESS</a>
+          </div>
+          <div class="submenu">
+            <a href="/lineaDetalles?idRecursoLinea=3" style="font-size: 15px !important;">Recursos en línea MRL</a>
+          </div>
+          <div class="submenu">
+            <a href="/lineaDetalles?idRecursoLinea=4" style="font-size: 15px !important;">Recursos en línea
+              SUPERCIAS</a>
+          </div>
+          <div class="submenu">
+            <a href="/lineaDetalles?idRecursoLinea=5" style="font-size: 15px !important;">Recursos en línea
+              MUNICIPIO</a>
+          </div>
+          <div class="submenu">
+            <a href="/lineaDetalles?idRecursoLinea=5" style="font-size: 15px !important;">Otros recursos en línea</a>
+          </div>
+        </div>
+  
+      </li>
+    </ul>
+  
+  </nav>
+
+</header>
