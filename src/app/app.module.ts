@@ -8,13 +8,13 @@ import { InicioComponent } from './view/web/inicio/inicio.component';
 import { DashboardComponent } from './view/administrador/dashboard/dashboard.component';
 import { HeaderComponent } from './view/web/componentes/header/header.component';
 import { FooterComponent } from './view/web/componentes/footer/footer.component';
-import { TemasinteresComponent } from './view/web/temasinteres/temasinteres.component';
 import { TrabajaComponent } from './view/web/trabaja/trabaja.component';
 import { HttpClientModule } from '@angular/common/http';
 import {ApiService} from './servicios/api/api.service';
 import { ServicioComponent } from './view/web/servicio/servicio.component';
 import { MapComponent } from './view/web/componentes/map/map.component';
 import { LineaComponent } from './view/web/linea/linea.component';
+import { TemasComponent } from './view/web/temas/temas.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +23,11 @@ import { LineaComponent } from './view/web/linea/linea.component';
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
-    TemasinteresComponent,
     ServicioComponent,
     TrabajaComponent,
     MapComponent,
-    LineaComponent
+    LineaComponent,
+    TemasComponent
   ],
   imports: [
     BrowserModule,

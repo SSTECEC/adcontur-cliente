@@ -3,11 +3,12 @@ import { ApiService } from 'src/app/servicios/api/api.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-temasinteres',
-  templateUrl: './temasinteres.component.html',
-  styleUrls: ['./temasinteres.component.css']
+  selector: 'app-temas',
+  templateUrl: './temas.component.html',
+  styleUrls: ['./temas.component.css']
 })
-export class TemasinteresComponent implements OnInit {
+export class TemasComponent implements OnInit {
+
   urls: any;
   lstTemasInteres = [];
   constructor(private conexion: ApiService) { }
@@ -28,5 +29,4 @@ export class TemasinteresComponent implements OnInit {
       }
     );
   }
-
 }
