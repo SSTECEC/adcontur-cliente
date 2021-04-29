@@ -1,0 +1,53 @@
+.flotante {
+    display: scroll;
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+}
+
+.flotante-detalle {
+    display: scroll;
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+}
+
+.wp-head {
+    border-radius: 8px 8px 0px 0px;
+    -moz-border-radius: 8px 8px 0px 0px;
+    -webkit-border-radius: 8px 8px 0px 0px;
+    background-color: #2db742;
+    color: #ffff;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17px;
+}
+
+.wp-body {
+    border-radius: 0px 0px 8px 8px;
+    -moz-border-radius: 0px 0px 8px 8px;
+    -webkit-border-radius: 0px 0px 8px 8px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    color: #000000;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.wp-card {
+    background-color: #f5f7f9;
+    color: #000;
+    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+    border-left: 2.3px solid #2db742;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    cursor: pointer;
+}

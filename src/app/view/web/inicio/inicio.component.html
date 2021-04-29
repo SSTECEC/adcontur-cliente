@@ -1,0 +1,630 @@
+<app-header-web></app-header-web>
+
+<section class="menu-web">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8" style="padding-right: 0px;">
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active" style="height: 400px !important; width: 100% !important;">
+              <img class="d-block w-100" src="assets/images/sliderinicio1.jpg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 style="font-weight: bold; color: #ffffff;">Adcontur ACP</h5>
+                <h5 style="color: #ffffff;">Soluciones Contables</h5>
+              </div>
+            </div>
+            <div class="carousel-item" style="height: 400px !important;">
+              <img class="d-block w-100" src="assets/images/carrucel2.jpg" alt="Second slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 style="font-weight: bold; color: #ffffff;">Adcontur ACP</h5>
+                <h5 style="color: #ffffff;">Soluciones Tributarias</h5>
+              </div>
+            </div>
+            <div class="carousel-item" style="height: 400px !important;">
+              <img class="d-block w-100" src="assets/images/carrucel3.jpg" alt="Third slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 style="font-weight: bold;  color: #ffffff;">Adcontur ACP</h5>
+                <h5 style="color: #ffffff;">Soluciones Administrativas</h5>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+      </div>
+      <div class="col-md-4" style="background-image: url('assets/images/notice.jpg');background-size: cover;">
+        <div style="padding: 20px;">
+
+          <div
+            style="background-color: rgba(0, 0, 0, 0.5); padding: 25px; border-radius: 0.45rem !important; border: 1px solid #13683b !important; color: #ffffff !important;">
+
+            <div>
+              <b>TEMAS DE INTERÉS</b>
+            </div>
+
+            <div *ngFor="let tema of lstTemas">
+              <a href="/detalle?idTema={{ tema.idTema }}" style="color: #fff;">*
+                <span style="font-size: 12.5px;">
+                  {{ tema.titulo }}
+                </span></a>
+            </div>
+
+          </div>
+          <br>
+          <div
+            style="background-color: rgb(241, 241, 241); padding: 25px; border-radius: 0.45rem !important; border: 1px solid #13683b !important;">
+
+            <div>
+              <b style="color: #13683b;">SERVICIOS</b>
+            </div>
+
+            <div style="font-size: 12.5px;">
+              <p>Recursos en línea</p>
+              <p>Utiliza nuestros recursos en línea, consulta de rucs en los <a href="/lineaDetalles?idRecursoLinea=1">
+                  Catastros del SRI.</a> Este servicio es gratuito.<br></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-movil">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="assets/images/sliderinicio1.jpg" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="assets/images/carrucel2.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="assets/images/carrucel3.jpg" alt="Third slide">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4" style="background-image: url('assets/images/notice.jpg');background-size: cover;">
+    <div style="padding: 20px;">
+
+      <div
+        style="background-color: rgba(0, 0, 0, 0.5); padding: 25px; border-radius: 0.45rem !important; border: 1px solid #13683b !important; color: #ffffff !important;">
+
+        <div>
+          <b>TEMAS DE INTERÉS</b>
+        </div>
+        <div *ngFor="let tema of lstTemas">
+          <a href="/detalle?idTema={{ tema.idTema }}" style="color: #fff;">*
+            <span>
+              {{ tema.titulo }}
+            </span></a>
+        </div>
+      </div>
+      <br>
+      <div
+        style="background-color: rgb(241, 241, 241); padding: 25px; border-radius: 0.45rem !important; border: 1px solid #13683b !important;">
+
+        <div>
+          <b style="color: #13683b;">SERVICIOS</b>
+        </div>
+
+        <div>
+          <p>Recursos en línea</p>
+          <p>Utiliza nuestros recursos en línea, consulta de rucs en los <a href="/lineaDetalles?idRecursoLinea=1">
+              Catastros del SRI.</a> Este servicio es gratuito.<br></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="ftco-intro ftco-no-pb img"
+  style="background-image: url(assets/images/contable.png); padding: 30px !important; margin: 0px;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h2 class="titlead">CONFIABILIDAD Y EXACTITUD EN NUESTROS SERVICIOS</h2>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section ftco-about ftco-no-pt ftco-no-pb ftco-counter" id="section-counter"
+  style="background-color: #FDFDFD;">
+  <div class="container consult-wrap">
+
+    <a name="acerca"></a>
+    <div class="row d-flex align-items-stretch">
+      <div class="col-md-6 wrap-about align-items-stretch d-flex">
+        <div class="img" style="background-image: url(assets/images/image_6.jpg);"></div>
+      </div>
+
+      <div class="col-md-6 wrap-about">
+        <div class="heading-section">
+          <br><br>
+          <h2>&nbsp;&nbsp;ADCONTUR ACP</h2>
+          <br>
+        </div>
+        <p style="text-align: justify; border: 2px solid #13683b !important; padding: 20px; border-radius: 4px;">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adcontur Soluciones Contables, Tributarias y
+          Administrativas.- Somos una empresa orgullosamente
+          ecuatoriana pioneros en brindar soluciones Contables, Tributarias y Administrativas, contamos
+          con más de 25 años de presencia en el mercado nacional; nuestra experiencia especializada y
+          comprobada en el asesoramiento de importantes empresas del mercado capitalino, nos permite
+          proporcionar a nuestros clientes alternativas de solución adecuadas y consistentes para
+          enfrentar los retos competitivos que plantea la administración moderna. <br>
+          Contamos con un equipo consolidado de profesionales, con el mas alto estándar y conocimiento en
+          empresas e instituciones con diversas actividades económicas.
+        </p>
+        <div class="tabulation-2 mt-4">
+          <ul class="nav nav-pills nav-fill d-md-flex d-block">
+            <li class="nav-item">
+              <a class="nav-link active py-2" data-toggle="tab" href="#home1"><span class="ion-ios-card mr-2"></span>
+                Misión</a>
+            </li>
+            <li class="nav-item px-lg-2">
+              <a class="nav-link py-2" data-toggle="tab" href="#home2"><span class="ion-ios-book mr-2"></span>
+                Visión</a>
+            </li>
+            <li class="nav-item px-lg-2">
+              <a class="nav-link py-2" data-toggle="tab" href="#home3"><span class="ion-ios-create mr-2"></span>
+                Enfoque</a>
+            </li>
+            <li class="nav-item px-lg-2">
+              <a class="nav-link py-2" data-toggle="tab" href="#home4"><span class="ion-ios-document mr-2"></span>
+                Ética</a>
+            </li>
+          </ul>
+          <div class="tab-content bg-light rounded mt-2" style="border: 2px solid #13683b !important">
+            <div class="tab-pane container p-0 active" id="home1">
+              <p style="text-align: justify;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ofrecer a nuestros clientes servicios
+                profesionales,
+                asegurando el cumplimiento de
+                normas y reglamentos preestablecidos en la legislación ecuatoriana en el campo
+                Contable, Tributario y Administrativo.<br><br>Enfocados siempre en la entrega de soluciones
+                viables, competitivas e innovadoras. Contamos con el mejor equipo de profesionales,
+                para
+                nosotros cada uno de nuestros clientes son importantes, por eso nuestra atención
+                personalizada y especializada.
+              </p>
+            </div>
+            <div class="tab-pane container p-0 fade" id="home2">
+              <p style="text-align: justify;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ser reconocidos en el mediano plazo por nuestros
+                clientes como un socio estratégico
+                para la toma de decisiones a través de: <br><br>
+
+                • Confiabilidad y exactitud en nuestros servicios<br>
+                • Actualización constante<br><br>
+
+                Aplicando estos principios, deseamos establecer relaciones duraderas, de respeto y
+                responsabilidad, con nuestros clientes y la sociedad en general.
+              </p>
+            </div>
+            <div class="tab-pane container p-0 fade" id="home3">
+              <p style="text-align: justify;">
+                Nuestro enfoque te permitirá:<br><br>
+
+                • Organizar tus cuentas.<br>
+                • Llevar procesos contables de calidad.<br>
+                • Administrar mejor su tiempo frente a tareas subyacentes.<br>
+                • Recortar gastos sin sacrificar la calidad.<br>
+                • Tener control de su dinero.<br>
+
+              </p>
+            </div>
+            <div class="tab-pane container p-0 fade" id="home4">
+              <p style="text-align: justify;">
+                Nuestra Ética Profesional: <br><br>
+
+                • Compromiso.<br>
+                • Lealtad.<br>
+                • Honestidad.<br>
+                • Calidez.<br>
+                • Respeto.<br>
+                • Responsabilidad.<br>
+
+              </p>
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <div style="text-align: center;">
+
+          <a href="https://www.websmultimedia.com/contador-de-visitas-gratis">
+            <img style="border: 0px solid; display: inline; width: 40%;" alt="contador de visitas"
+              src="https://www.websmultimedia.com/contador-de-visitas.php?id=288978"></a>
+          <br>
+          <h3><a href='https://www.websmultimedia.com/contador-de-visitas-gratis'>Visitas Realizadas</a></h3>
+          <br>
+          <a href=""></a>
+
+        </div>
+      </div>
+
+
+      <!--<div class="row mt-5">
+      <div class="col-md d-flex justify-content-center counter-wrap ">
+        <div class="block-18">
+          <div class="icon"><span class="flaticon-doctor"></span></div>
+          <div class="text">
+            <strong class="number" data-number="50">0</strong>
+            <span>Visitas</span>
+          </div>
+        </div>
+      </div>-->
+      <!--<div class="col-md d-flex justify-content-center counter-wrap ">
+        <div class="block-18">
+          <div class="icon"><span class="flaticon-doctor"></span></div>
+          <div class="text">
+            <strong class="number" data-number="115">0</strong>
+            <span>Documentos</span>
+          </div>
+        </div>
+      </div>-->
+      <!--<div class="col-md d-flex justify-content-center counter-wrap ">
+        <div class="block-18">
+          <div class="icon"><span class="flaticon-doctor"></span></div>
+          <div class="text">
+            <strong class="number" data-number="20">0</strong>
+            <span>Equipo</span>
+          </div>
+        </div>
+      </div>-->
+
+    </div>
+  </div>
+</section>
+
+<a name="servicios_"></a>
+<section class="ftco-intro ftco-no-pb img"
+  style="background-image: url(assets/images/image_4.jpg); padding: 30px !important; margin: 0px;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h2 class="titlead">SIEMPRE OBTIENES LA MEJOR ORIENTACIÓN DE NUESTROS SERVICIOS</h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="welcome_sec">
+  <div class="container">
+    <div class="row welcome welcome_details">
+      <div *ngFor="let servicio of lstServicios" class="col-md-6" style="padding: 20px;">
+        <div class="welcome_item"><a href="{{ servicio.path}}/{{ servicio.idServicio }}">
+            <img src="{{ urls.urlImagenes }}{{ servicio.imagen }}" width="200" class="fots_">
+            <div class="welcome_info welcome_new_">
+              <h3>
+                {{ servicio.titulo }}
+              </h3>
+              <p>
+                {{ servicio.descripcion_corta }}
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<br>
+
+<section class="ftco-intro ftco-no-pb img"
+  style="background-image: url(assets/images/image_4.jpg); padding: 30px !important; margin: 0px;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h2 class="titlead" style="font-size: 30px;">PLANES DE NUESTROS SERVICIOS</h2>
+    </div>
+  </div>
+</section>
+
+<div id="generic_price_table">
+  <section>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-4">
+
+          <div class="generic_content clearfix"
+            style="background-color: #fcfcfc; border: 1px solid #fcfcfc !important; border-radius: 0.45rem !important; border-bottom: 1px solid #d6d6d6 !important; border-left: 1px solid #d6d6d6 !important; border-right: 1px solid #d6d6d6 !important;">
+            <div class="generic_head_price clearfix">
+              <div class="generic_head_content clearfix">
+                <div class="head_bg"></div>
+                <div class="head">
+                  <span style="font-size: 17px !important;">PN NO OBLIGADAS</span>
+                </div>
+              </div>
+              <div class="generic_price_tag clearfix">
+                <span class="price">
+                  <span class="sign">$</span>
+                  <span class="currency">9</span>
+                  <span class="cent">.99</span>
+                  <span class="month">/MEN</span>
+                </span>
+              </div>
+              <div class="generic_price_btn clearfix" id="btnPlan1" style="cursor: pointer;">
+                <a class="">Cotizar Plan</a>
+              </div>
+            </div>
+            <div class="generic_feature_list">
+              <ul>
+                <li>Declaración Iva Mensual </li>
+                <li>Declaración Imp. Renta </li>
+                <li>Asesoría Contable </li>
+                <li>Clasificación de Gastos Personales</li>
+                <li><span></span></li>
+                <li><span></span></li>
+                <li><span>24/7</span> Soporte</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+
+          <!--PRICE CONTENT START-->
+          <div class="generic_content active clearfix"
+            style="background-color: #fcfcfc; border: 1px solid #fcfcfc !important; border-radius: 0.45rem !important; border-bottom: 1px solid #d6d6d6 !important; border-left: 1px solid #d6d6d6 !important; border-right: 1px solid #d6d6d6 !important;">
+
+            <!--HEAD PRICE DETAIL START-->
+            <div class="generic_head_price clearfix">
+
+              <!--HEAD CONTENT START-->
+              <div class="generic_head_content clearfix">
+
+                <!--HEAD START-->
+                <div class="head_bg"></div>
+                <div class="head">
+                  <span style="font-size: 17px !important;">Profesionales y PN Obligadas</span>
+                </div>
+                <!--//HEAD END-->
+
+              </div>
+              <!--//HEAD CONTENT END-->
+
+              <!--PRICE START-->
+              <div class="generic_price_tag clearfix">
+                <span class="price">
+                  <span class="sign">$</span>
+                  <span class="currency">99</span>
+                  <span class="cent">.99</span>
+                  <span class="month">/MEN</span>
+                </span>
+              </div>
+              <!--//PRICE END-->
+
+              <!--BUTTON START-->
+              <div class="generic_price_btn clearfix" id="btnPlan2" style="cursor: pointer;">
+                <a class="">Cotizar Plan</a>
+              </div>
+              <!--//BUTTON END-->
+
+            </div>
+            <!--//HEAD PRICE DETAIL END-->
+
+            <!--FEATURE LIST START-->
+            <div class="generic_feature_list">
+              <ul>
+                <li>Declaración Iva Mensual </li>
+                <li>Declaración Imp. Renta </li>
+                <li>Asesoría Contable </li>
+                <li>Estados Financieros</li>
+                <li><span></span></li>
+                <li><span></span></li>
+                <li><span>24/7</span> Soporte</li>
+              </ul>
+            </div>
+            <!--//FEATURE LIST END-->
+
+          </div>
+          <!--//PRICE CONTENT END-->
+
+        </div>
+
+        <div class="col-md-4">
+
+          <!--PRICE CONTENT START-->
+          <div class="generic_content clearfix"
+            style="background-color: #fcfcfc; border: 1px solid #fcfcfc !important; border-radius: 0.45rem !important; border-bottom: 1px solid #d6d6d6 !important; border-left: 1px solid #d6d6d6 !important; border-right: 1px solid #d6d6d6 !important;">
+
+            <!--HEAD PRICE DETAIL START-->
+            <div class="generic_head_price clearfix">
+
+              <!--HEAD CONTENT START-->
+              <div class="generic_head_content clearfix">
+
+                <!--HEAD START-->
+                <div class="head_bg"></div>
+                <div class="head">
+                  <span style="font-size: 17px !important;">Pequeña y Mediana Empresa</span>
+                </div>
+                <!--//HEAD END-->
+
+
+              </div>
+              <!--//HEAD CONTENT END-->
+
+              <!--PRICE START-->
+              <div class="generic_price_tag clearfix">
+                <span class="price">
+                  <span class="sign">$</span>
+                  <span class="currency">149</span>
+                  <span class="cent">.99</span>
+                  <span class="month">/MEN</span>
+                </span>
+              </div>
+              <!--//PRICE END-->
+
+              <!--BUTTON START-->
+              <div class="generic_price_btn clearfix" id="btnPlan3" style="cursor: pointer;">
+                <a class="">Cotizar Plan</a>
+              </div>
+              <!--//BUTTON END-->
+
+            </div>
+            <!--//HEAD PRICE DETAIL END-->
+
+            <!--FEATURE LIST START-->
+            <div class="generic_feature_list">
+              <ul>
+                <li>Declaración Iva Mensual </li>
+                <li>Declaración Imp. Renta </li>
+                <li>Asesoría Contable </li>
+                <li>Estados Financieros</li>
+                <li><span></span></li>
+                <li><span></span></li>
+                <li><span>24/7</span> Soporte</li>
+              </ul>
+            </div>
+            <!--//FEATURE LIST END-->
+
+          </div>
+          <!--//PRICE CONTENT END-->
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<section class="ftco-intro ftco-no-pb img"
+  style="background-image: url(assets/images/image_4.jpg); padding: 30px !important; margin: 0px;">
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <h2 class="titlead" style="font-size: 30px;">CONTÁCTANOS</h2>
+
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section testimony-section" style="background-color: #FDFDFD;">
+  <div class="container-fluid px-md-5">
+    <a name="contacto"></a>
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+
+        <div class="container">
+          <div class="row d-flex mb-5 contact-info justify-content-center" style="color: black;">
+            <div class="col-md-10">
+              <div class="row mb-5">
+                <div class="col-md-4 text-center d-flex">
+                  <div class="border w-100 p-4">
+                    <div class="icon">
+                      <span class="icon-map-o" style="font-size: 30px; color: #13683B;"></span>
+                    </div>
+                    <p><span style="font-size: 18px; color: black;"><b>Dirección:</b></span><br><a
+                        href="#direccion">Jorge
+                        Washington
+                        E4-59 y Amazonas Edif.
+                        Rocafuerte, Of. 5, sector C.C.Espiral</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 text-center d-flex">
+                  <div class="border w-100 p-4">
+                    <div class="icon">
+                      <span class="icon-tablet" style="font-size: 30px; color: #13683B"></span>
+                    </div>
+                    <p><span style="font-size: 18px;"><b>
+                          Teléfono:</b></span><br><a href="tel:+022500610">022500610, </a><a
+                        href="tel:+0997607812">0997607812</a></p>
+                  </div>
+                </div>
+                <div class="col-md-4 text-center d-flex">
+                  <div class="border w-100 p-4">
+                    <div class="icon">
+                      <span class="icon-envelope-o" style="font-size: 30px; color: #13683B"></span>
+                    </div>
+                    <p><span style="font-size: 18px;"><b>Correo Electrónico:</b></span><br>
+                      <a href="mailto:info@adcontur.com">info@adcontur.com</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row block-9 justify-content-center mb-5">
+            <div class="col-md-12 mb-md-5" id="direccion">
+              <br>
+                 <app-map></app-map>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal fade" id="modalPlanes" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body" style="padding: 45px !important;">
+
+        <h4>Ayúdanos con estos datos</h4>
+        <p>Estas a un paso de transformar tus finanzas.</p>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Nombre Completo" id="nombre">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Correo Electrónico" id="email">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Teléfono" id="telefono">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Número de Facturas Aproximadas al Mes" id="ventas">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Número de Compras Aproximadas al Mes" id="compras">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Número de Empleados Afiliados" id="afiliados">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary py-3 px-5" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary py-3 px-5" id="btnSolicitar">Solicitar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="loader" class="">&#8230;</div>
+
+<app-footer></app-footer>

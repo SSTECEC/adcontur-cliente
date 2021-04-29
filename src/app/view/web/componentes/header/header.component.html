@@ -1,0 +1,92 @@
+<div class="bg-top navbar-light d-flex flex-column-reverse"
+  style="background-color: #FDFDFD; padding-top: 9px; padding-bottom: 9px;">
+  <div class="container py-1">
+    <div class="row no-gutters d-flex align-items-center align-items-stretch">
+      <div class="col-md-10 d-flex">
+        <div class="row d-flex">
+          <div class="col-md-12">
+            <div>
+              ¿Te puedo ayudar?... <a href="tel:+022500610"></a> <b>022500610</b>, <a href="tel:+0997607812"></a>
+              <b>0997607812</b>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 d-block" style="text-align: right !important;">
+        <div class="row d-flex">
+          <div class="col-md-12">
+            <a href="https://www.instagram.com/adcontur_acp" target="_blank">
+              <img src="assets/images/instagram.png" alt="" width="28">
+            </a>&nbsp;
+            <a href="https://es-la.facebook.com/Adcontur.ACP" target="_blank">
+              <img src="assets/images/facebook.png" alt="" width="28">
+            </a>&nbsp;
+            <a href="https://www.linkedin.com/in/adcontur-acp" target="_blank">
+              <img src="assets/images/linkedin.png" alt="" width="28">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light fondo menu-web" id="ftco-navbar">
+  <div class="container d-flex align-items-center" style="padding: 10px;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menú
+    </button>
+    <div class="col-md-4 d-flex align-items-center py-2">
+      <img src="assets/images/logo.png" alt="ADCONTUR" style="width: 90%;" class="lgo1">
+      <img src="assets/images/logoBlanco.png" alt="ADCONTUR" style="width: 90%;" class="lgo2">
+    </div>
+    <div class="collapse navbar-collapse clase" id="ftco-nav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a href="/" class="nav-link" style="font-size: 15px !important;">Inicio</a></li>
+        <li class="nav-item">
+          <a href="/#servicios_" class="nav-link" style="font-size: 15px !important;">Servicios</a>
+          <ul class="dropdown-menu"
+            style="background-color: #13683b; width: 260px !important; min-width: 260px !important;">
+
+            <li *ngFor="let servicio of lstServicios">
+              <a href="{{ servicio.path}}/{{ servicio.idServicio }}" style="font-size: 15px !important;">{{ servicio.titulo }}</a>
+            </li>     
+          </ul>
+        </li>
+        <li class="nav-item"><a [routerLink]="['/temas-interes']" class="nav-link" style="font-size: 15px !important;">Temas de
+            Interés</a></li>
+        <li class="nav-item"><a [routerLink]="['/trabaja-nosotros']" class="nav-link" style="font-size: 15px !important;">Trabaja con
+            Nosotros</a></li>
+        <li class="nav-item">
+          <a [routerLink]="['/linea']" class="nav-link" style="font-size: 15px !important;">
+            Recursos en Línea
+          </a>
+          <ul class="dropdown-menu"
+            style="background-color: #13683b; width: 260px !important; min-width: 260px !important;">
+            <li>
+              <a onclick="verificarCredencialesLink(1)" style="font-size: 15px !important;">Recursos en línea SRI</a>
+            </li>
+            <li>
+              <a onclick="verificarCredencialesLink(2)" style="font-size: 15px !important;">Recursos en línea IESS</a>
+            </li>
+            <li>
+              <a onclick="verificarCredencialesLink(3)" style="font-size: 15px !important;">Recursos en línea MRL</a>
+            </li>
+            <li>
+              <a onclick="verificarCredencialesLink(4)" style="font-size: 15px !important;">Recursos en línea
+                SUPERCIAS</a>
+            </li>
+            <li>
+              <a onclick="verificarCredencialesLink(5)" style="font-size: 15px !important;">Recursos en línea
+                MUNICIPIO</a>
+            </li>
+            <li>
+              <a onclick="verificarCredencialesLink(6)" style="font-size: 15px !important;">Otros recursos en línea</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
