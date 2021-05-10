@@ -1,0 +1,169 @@
+<app-header-web></app-header-web>
+
+<ngx-spinner></ngx-spinner>
+
+<section
+  style="padding: 10px; background-color: #f7f7f7; text-align: center; position: -webkit-sticky !important; position: sticky !important; top: 100px !important; z-index: 100 !important;">
+  <div>
+    <h2 class="mb-0"><b style="color: #13683b; font-size: 35px; padding-left: 15px;">Tema de Interés</b></h2>
+  </div>
+</section>
+
+<section class="ftco-section ftco-about ftco-no-pt ftco-no-pb ftco-counter" id="section-counter"
+  style="background-color: #FDFDFD;">
+  <div class="container consult-wrap">
+    <br><br>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="row">
+          <div id="imprimible" class="col-md-8 wrap-about ftco-animate py-md-5 pl-md-5 fadeInUp ftco-animated"
+            style="padding: 48px; border: 2px solid #13683b !important; border-radius: 0.45rem !important; background-image: url('assets/images/fondoServicios.jpg'); background-size: cover; color: #000000 !important;">
+            <div class="heading-section mb-4">
+              <h2 id="tituloTema" style="font-size: 26px;">Titulo</h2>
+            </div>
+            <p style="text-align: left; font-weight: bold;" id="tipoTema">
+              Tipo
+            </p>
+            <div id="descripcionTema"></div>
+          </div>
+          <div class="col-md-1" style="padding: 0px !important; margin: 0px !important;"></div>
+          <div class="col-md-3 wrap-about ftco-animate py-md-5 pl-md-5 fadeInUp ftco-animated"
+            style="background-color: beige; border-radius: 0.45rem !important;">
+            <div style="text-align: left;">
+              <p style="color: #13683B;">
+                <b>VISTO</b>
+                <br>
+                <!-- Contador de visitas -->
+                <a href="https://www.websmultimedia.com/contador-de-visitas-gratis">
+                  <img style="border: 0px solid; display: inline;" alt="contador de visitas"
+                    src="https://www.websmultimedia.com/contador-de-visitas.php?id=289447"></a>
+                <a href=""></a>
+                <!-- Fin Contador de visitas -->
+            </div>
+            <div style="text-align: left;">
+              <p style="color: #13683B;">
+                <b>COMPARTIR</b>
+              </p>
+              <p class="social mb-0">
+
+                <a href="#" target="_blank">
+                  <img src="assets/images/instagram.png" alt="" width="28">
+                </a>
+                &nbsp;&nbsp;
+                <span id="facebookTema">
+                  <a href="http://www.facebook.com/sharer.php?u=https://adcontur.com/tema/detalle/{{ idTema }}"
+                    target="_blank">
+                    <img src="assets/images/facebook.png" alt="" width="28">
+                  </a>
+                </span>
+
+                &nbsp;&nbsp;
+                <span id="linkedinTema">
+                  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://adcontur.com/tema/detalle/{{ idTema }}"
+                    target="_blank">
+                    <img src="assets/images/linkedin.png" alt="" width="28">
+                  </a>
+                </span>
+
+                &nbsp;&nbsp;
+                <a style="cursor: pointer;" (click)="imprimirTema()" id="btnImprimirParrafo" style="font-size: 30px; cursor: pointer;" target="_blank">
+                  <img src="assets/images/printer.png" alt="Imprimir" width="28">
+                </a>
+                &nbsp;&nbsp;
+              </p>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="ftco-intro ftco-no-pb img"
+  style="background-image: url(assets/images/bg_1.jpg); padding: 30px !important;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10 text-center heading-section heading-section-white">
+        <h2 class="mb-0">Siempre obtienes la mejor orientación</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section testimony-section">
+  <div class="container-fluid px-md-5">
+    <a name="Contacto"></a>
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center heading-section">
+        <h2 class="mb-4">Contacto</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="container">
+          <div class="row d-flex mb-5 contact-info justify-content-center" style="color: black;">
+            <div class="col-md-10">
+              <div class="row mb-5">
+
+                <div class="col-md-4 text-center d-flex">
+
+                  <div class="border w-100 p-4">
+                    <div class="icon"><span class="icon-map-o" style="font-size: 30px; color: #13683B;"></span></div>
+                    <p>
+                      <span style="font-size: 18px; color: black;"><b>Dirección:</b></span>
+                      <br>
+                      <a href="#direccion">Jorge Washington E4-59 y Amazonas Edif. Rocafuerte, Of.
+                        5, sector
+                        C.C.Espiral</a>
+                    </p>
+                  </div>
+
+                </div>
+
+                <div class="col-md-4 text-center d-flex">
+
+                  <div class="border w-100 p-4">
+                    <div class="icon"><span class="icon-map-o" style="font-size: 30px; color: #13683B;"></span></div>
+                    <p>
+                      <span style="font-size: 18px; color: black;"><b>Teléfono:</b></span>
+                      <br>
+                      <a href="tel:+022500610">022500610,</a>
+                      <a href="tel:+0997607812">0997607812</a>
+                    </p>
+                  </div>
+
+                </div>
+
+                <div class="col-md-4 text-center d-flex">
+
+                  <div class="border w-100 p-4">
+                    <div class="icon"><span class="icon-envelope-o" style="font-size: 30px; color: #13683B"></span>
+                    </div>
+                    <p>
+                      <span style="font-size: 18px; color: black;"><b>Correo
+                          Electrónico::</b></span>
+                      <br>
+                      <a href="mailto:info@adcontur.com">info@adcontur.com</a>
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="row block-9 justify-content-center mb-5">
+                <div class="col-md-10 mb-md-5" id="direccion">
+                  <br>
+                  <app-map></app-map>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

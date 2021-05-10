@@ -1,5 +1,5 @@
 <app-header-web></app-header-web>
-
+<ngx-spinner></ngx-spinner>
 <section class="menu-web">
 
   <div class="container">
@@ -360,7 +360,7 @@
                   <span class="month">/MEN</span>
                 </span>
               </div>
-              <div class="generic_price_btn clearfix" id="btnPlan1" style="cursor: pointer;">
+              <div class="generic_price_btn clearfix" (click)="abrirModalPlanes(1)" style="cursor: pointer;">
                 <a class="">Cotizar Plan</a>
               </div>
             </div>
@@ -412,7 +412,7 @@
               <!--//PRICE END-->
 
               <!--BUTTON START-->
-              <div class="generic_price_btn clearfix" id="btnPlan2" style="cursor: pointer;">
+              <div class="generic_price_btn clearfix" (click)="abrirModalPlanes(2)" style="cursor: pointer;">
                 <a class="">Cotizar Plan</a>
               </div>
               <!--//BUTTON END-->
@@ -474,7 +474,7 @@
               <!--//PRICE END-->
 
               <!--BUTTON START-->
-              <div class="generic_price_btn clearfix" id="btnPlan3" style="cursor: pointer;">
+              <div class="generic_price_btn clearfix" (click)="abrirModalPlanes(3)" style="cursor: pointer;">
                 <a class="">Cotizar Plan</a>
               </div>
               <!--//BUTTON END-->
@@ -566,7 +566,7 @@
           <div class="row block-9 justify-content-center mb-5">
             <div class="col-md-12 mb-md-5" id="direccion">
               <br>
-                 <app-map></app-map>
+              <app-map></app-map>
             </div>
           </div>
         </div>
@@ -587,44 +587,48 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Nombre Completo" id="nombre">
+              <input type="text" class="form-control" placeholder="Nombre Completo" [(ngModel)]="fmrPlan.nombre"
+              (keyup)="fmrPlan.nombre = generico.formatoCampo(fmrPlan.nombre, 'abcdefghijklmnñopqrstuvwxyzáéíóúÁÉÍÓÚABCDEFGHIJKLMNÑOPQRSTUVWXYZ ', 100, 1)">
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Correo Electrónico" id="email">
+              <input type="text" class="form-control" placeholder="Correo Electrónico" [(ngModel)]="fmrPlan.email"
+              (keyup)="fmrPlan.email = generico.formatoCampo(fmrPlan.email, 'abcdefghijklmnñopqrstuvwxyzáéíóúÁÉÍÓÚABCDEFGHIJKLMNÑOPQRSTUVWXYZ!:._-@¿?¡!1234567890', 100, 2)">
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Teléfono" id="telefono">
+              <input type="text" class="form-control" placeholder="Teléfono" [(ngModel)]="fmrPlan.telefono"
+              (keyup)="fmrPlan.telefono = generico.formatoCampo(fmrPlan.telefono, '0123456789', 10, 2)">
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Número de Facturas Aproximadas al Mes" id="ventas">
+              <input type="text" class="form-control" placeholder="Número de Facturas Aproximadas al Mes"
+                [(ngModel)]="fmrPlan.ventas">
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Número de Compras Aproximadas al Mes" id="compras">
+              <input type="text" class="form-control" placeholder="Número de Compras Aproximadas al Mes"
+                [(ngModel)]="fmrPlan.compras">
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Número de Empleados Afiliados" id="afiliados">
+              <input type="text" class="form-control" placeholder="Número de Empleados Afiliados"
+                [(ngModel)]="fmrPlan.afiliados">
             </div>
           </div>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary py-3 px-5" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary py-3 px-5" id="btnSolicitar">Solicitar</button>
+        <button type="button" class="btn btn-primary py-3 px-5" (click)="cotizarPlan()">Solicitar</button>
       </div>
     </div>
   </div>
 </div>
-
-<div id="loader" class="">&#8230;</div>
 
 <app-footer></app-footer>

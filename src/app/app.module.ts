@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +18,11 @@ import { ServicioComponent } from './view/web/servicio/servicio.component';
 import { MapComponent } from './view/web/componentes/map/map.component';
 import { LineaComponent } from './view/web/linea/linea.component';
 import { TemasComponent } from './view/web/temas/temas.component';
+import { LineaDetalleComponent } from './view/web/linea-detalle/linea-detalle.component';
+import { UtilitariosService } from './metodos/utilitarios/utilitarios.service';
+import { GridModule } from '@progress/kendo-angular-grid';
+import { TemasDetalleComponent } from './view/web/temas-detalle/temas-detalle.component';
+
 
 @NgModule({
   declarations: [
@@ -27,15 +35,21 @@ import { TemasComponent } from './view/web/temas/temas.component';
     TrabajaComponent,
     MapComponent,
     LineaComponent,
-    TemasComponent
+    TemasComponent,
+    LineaDetalleComponent,
+    TemasDetalleComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule,
+    ReactiveFormsModule,
+    FormsModule,
+    GridModule
   ],
-  providers: [ApiService],
+  providers: [ApiService, UtilitariosService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

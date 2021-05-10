@@ -22,27 +22,10 @@
          Recursos en línea:
          <br>
          <ul class="puntos">
-           <li>
-             <a [routerLink]="['/lineaDetalles?idRecursoLinea=1']"  style="font-size: 15px !important;">Recursos en línea
-               SRI</a>
-           </li>
-           <li>
-             <a href="" style="font-size: 15px !important; color: #525252 !important;">Recursos en línea IESS</a>
-           </li>
-           <li>
-             <a href="#" style="font-size: 15px !important; color: #525252 !important;">Recursos en línea MRL</a>
-           </li>
-           <li>
-             <a href="#" style="font-size: 15px !important; color: #525252 !important;">Recursos en línea
-               SUPERCIAS</a>
-           </li>
-           <li>
-             <a href="#" style="font-size: 15px !important; color: #525252 !important;">Recursos en línea
-               MUNICIPIO</a>
-           </li>
-           <li>
-             <a href="#" style="font-size: 15px !important; color: #525252 !important;">Otros recursos en línea</a>
-           </li>
+          <li *ngFor="let recu of lstRecursos">
+            <a href="linea/detalle/{{recu.idRecursos}}" 
+            [ngStyle]="{'font-size': '15px', 'color': recu.estado == 2 ? '#525252' : '#13683b'}"> {{ recu.nombre }} </a>
+          </li>
          </ul>
        </div>
 

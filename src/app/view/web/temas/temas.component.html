@@ -3,59 +3,75 @@
 <section
   style="padding: 10px; background-color: #f7f7f7; text-align: center; position: -webkit-sticky !important; position: sticky !important; top: 100px !important; z-index: 100 !important;">
   <div>
-    <h2 class="mb-0"><b style="color: #13683b; font-size: 35px; padding-left: 15px;">Temas de Interés</b></h2>
+    <h2 class="mb-0">
+      <b style="color: #13683b; font-size: 35px; padding-left: 15px;">Temas de Interés</b>
+    </h2>
   </div>
 </section>
 
-
-
-<section class="ftco-section ftco-about ftco-no-pt ftco-no-pb ftco-counter" id="section-counter">
+<section id="section-counter" class="ftco-section ftco-about ftco-no-pt ftco-no-pb ftco-counter">
   <div class="container consult-wrap">
-    <br>
     <div class="row">
       <div class="col-md-12">
         <div class="row">
-          <div class="col-md-8" style="line-height: 55px;">
-            <!-- <div id="aviso_filtro" style="cursor: pointer;">
-              <img src="images/delete.png" alt="" width="20"> Quitar Filtro
-            </div> -->
-
-            TRIBUTACIÓN: 6 &nbsp;&nbsp;|&nbsp;&nbsp; DEVOLUCIÓN IMPTOS: 2 &nbsp;&nbsp;|&nbsp;&nbsp;
-            MUNICIPIO: 1 &nbsp;&nbsp;|&nbsp;&nbsp; R.R.H.H.: 2
-          </div>
-
-
-          <div class="col-md-4" style="float: right !important;">
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Buscar tema de interés..." aria-label="search"
-                aria-describedby="basic-addon2" id="txtBuscar" type="text">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button" id="btnBuscar">
-                  &nbsp;&nbsp; <img src="assets/images/lupa.png" alt="O" style="width: 20px"> &nbsp;&nbsp;
-                </button>
-              </div>
-            </div>
-
+          <div class="col-md-12">
+            <ul *ngFor="let item of lstTipoTemas"
+              style="display: inline-flex !important;list-style:none; padding-left: 0px !important;">
+              <li style="line-height: 55px;"> {{ item.nombre }} :<span style="line-height: 55px; margin-left: 5px;"> {{
+                  item.cantidad &nbsp;&nbsp;&nbsp; }} <span style="color: #13683B;">|</span>&nbsp;&nbsp;&nbsp;</span>
+              </li>
+            </ul>
           </div>
         </div>
-        <br>
+
+        <div class="row">
+
+          <div class="col-md-12">
+            <kendo-grid [groupable]="true" [pageSize]="state.take" [skip]="state.skip" [sort]="state.sort"
+              [data]="gridView" 
+              [sortable]="{allowUnsort: true, mode: 'single'}" [group]="groups"
+              [pageable]="true" filterable="menu" (sortChange)="sortChange($event)" (groupChange)="groupChange($event)"
+              (dataStateChange)="dataStateChange($event)">
+
+              <kendo-grid-column field="titulo" title="Buscar tema de interés">
+                <ng-template kendoGridCellTemplate let-dataItem>
+
+                  <div
+                    style="border: 1px solid #EDEDED; border-radius: 4px; padding: 20px; background-color: #fff; cursor: pointer;"
+                    (click)="detalleTema(dataItem)">
+                    <p>{{ dataItem.Fecha }}</p>
+                    <b style="color: #13683B;">{{ dataItem.titulo }}</b>
+                  </div>
+
+                </ng-template>
+              </kendo-grid-column>
+
+              <kendo-grid-messages groupPanelEmpty="Arrastra aquí para agrupar"
+              noRecords="No hay elementos que mostrar." pagerPage="Página" pagerOf="de" pagerItems="ítems"
+              pagerItemsPerPage="ítems por página" filterClearButton="Limpiar" filterFilterButton="Buscar"
+              filterAndLogic="Y" filterOrLogic="O" filterEqOperator="Es igual a" filterNotEqOperator="No es igual a"
+              filterContainsOperator="Contiene" filterNotContainsOperator="No contiene"
+              filterStartsWithOperator="Comienza con" filterEndsWithOperator="Termina con"
+              filterIsNullOperator="Es nulo (null)" filterIsNotNullOperator="No es nulo (null)"
+              filterIsEmptyOperator="Esta vacio" filterIsNotEmptyOperator="No está vacío"
+              filterAfterOperator="Es posterior a" filterAfterOrEqualOperator="Es posterior o igual a"
+              filterBeforeOrEqualOperator="Es anterior o igual a" filterBeforeOperator="Es antes">
+            </kendo-grid-messages>
+            </kendo-grid>
+          </div>
+
+        </div>
+
       </div>
-
-
-
-      <div class="col-md-12" id="filtro">
-
-      </div>
-
     </div>
   </div>
 </section>
-<br>
+
 <section class="ftco-intro ftco-no-pb img"
   style="background-image: url(assets/images/bg_1.jpg); padding: 30px !important;">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-10 text-center heading-section heading-section-white ">
+      <div class="col-md-10 text-center heading-section heading-section-white">
         <h2 class="mb-0">Siempre obtienes la mejor orientación</h2>
       </div>
     </div>
@@ -64,63 +80,71 @@
 
 <section class="ftco-section testimony-section">
   <div class="container-fluid px-md-5">
-    <a name="contacto"></a>
+    <a name="Contacto"></a>
     <div class="row justify-content-center mb-5">
-      <div class="col-md-8 text-center heading-section ">
+      <div class="col-md-8 text-center heading-section">
         <h2 class="mb-4">Contacto</h2>
       </div>
     </div>
-    <div class="row  justify-content-center">
+    <div class="row justify-content-center">
       <div class="col-md-12">
-
         <div class="container">
           <div class="row d-flex mb-5 contact-info justify-content-center" style="color: black;">
             <div class="col-md-10">
               <div class="row mb-5">
+
                 <div class="col-md-4 text-center d-flex">
+
                   <div class="border w-100 p-4">
-                    <div class="icon">
-                      <span class="icon-map-o" style="font-size: 30px; color: #13683B;"></span>
-                    </div>
-                    <p><span style="font-size: 18px; color: black;"><b>Dirección:</b></span><br><a
-                        href="#direccion">Jorge
-                        Washington
-                        E4-59 y Amazonas Edif.
-                        Rocafuerte, Of. 5, sector C.C.Espiral</a>
+                    <div class="icon"><span class="icon-map-o" style="font-size: 30px; color: #13683B;"></span></div>
+                    <p>
+                      <span style="font-size: 18px; color: black;"><b>Dirección:</b></span>
+                      <br>
+                      <a href="#direccion">Jorge Washington E4-59 y Amazonas Edif. Rocafuerte, Of. 5, sector
+                        C.C.Espiral</a>
                     </p>
                   </div>
+
                 </div>
+
                 <div class="col-md-4 text-center d-flex">
+
                   <div class="border w-100 p-4">
-                    <div class="icon">
-                      <span class="icon-tablet" style="font-size: 30px; color: #13683B"></span>
-                    </div>
-                    <p><span style="font-size: 18px;"><b>
-                          Teléfono:</b></span><br><a href="tel:+022500610">022500610,
-                      </a><a href="tel:+0997607812">0997607812</a></p>
+                    <div class="icon"><span class="icon-map-o" style="font-size: 30px; color: #13683B;"></span></div>
+                    <p>
+                      <span style="font-size: 18px; color: black;"><b>Teléfono:</b></span>
+                      <br>
+                      <a href="tel:+022500610">022500610,</a>
+                      <a href="tel:+0997607812">0997607812</a>
+                    </p>
                   </div>
+
                 </div>
+
                 <div class="col-md-4 text-center d-flex">
+
                   <div class="border w-100 p-4">
-                    <div class="icon">
-                      <span class="icon-envelope-o" style="font-size: 30px; color: #13683B"></span>
+                    <div class="icon"><span class="icon-envelope-o" style="font-size: 30px; color: #13683B"></span>
                     </div>
-                    <p><span style="font-size: 18px;"><b>Correo Electrónico:</b></span><br>
+                    <p>
+                      <span style="font-size: 18px; color: black;"><b>Correo Electrónico::</b></span>
+                      <br>
                       <a href="mailto:info@adcontur.com">info@adcontur.com</a>
                     </p>
                   </div>
+
+                </div>
+
+              </div>
+              <div class="row block-9 justify-content-center mb-5">
+                <div class="col-md-10 mb-md-5" id="direccion">
+                  <br>
+                  <app-map></app-map>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row block-9 justify-content-center mb-5">
-            <div class="col-md-10 mb-md-5" id="direccion">
-              <br>
-              <app-map></app-map>
-            </div>
-          </div>
         </div>
-
       </div>
     </div>
   </div>
