@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -26,32 +25,5 @@ export class UtilitariosService {
   public validarEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
-  }
-
-  public alerta(tipo: any, titulo: any, texto: any) {
-    Swal.fire({
-      icon: tipo,
-      title: titulo,
-      html: texto
-    })
-  }
-
-  public notificacion(tipo: any, texto: any) {
-    const Toast = Swal.mixin({
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-      timer: 3000,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-      }
-    })
-
-    Toast.fire({
-      icon: tipo,
-      title: texto
-    })
   }
 }

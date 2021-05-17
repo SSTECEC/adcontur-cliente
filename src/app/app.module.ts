@@ -22,9 +22,6 @@ import { LineaDetalleComponent } from './view/web/linea-detalle/linea-detalle.co
 import { UtilitariosService } from './metodos/utilitarios/utilitarios.service';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { TemasDetalleComponent } from './view/web/temas-detalle/temas-detalle.component';
-import { LoginComponent } from './view/login/login.component';
-import { SesionService } from './servicios/sesion/sesion.service';
-import { UsuarioSesionComponent } from './view/web/componentes/usuario-sesion/usuario-sesion.component';
 
 
 @NgModule({
@@ -40,9 +37,7 @@ import { UsuarioSesionComponent } from './view/web/componentes/usuario-sesion/us
     LineaComponent,
     TemasComponent,
     LineaDetalleComponent,
-    TemasDetalleComponent,
-    LoginComponent,
-    UsuarioSesionComponent
+    TemasDetalleComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +49,7 @@ import { UsuarioSesionComponent } from './view/web/componentes/usuario-sesion/us
     FormsModule,
     GridModule
   ],
-  providers: [ApiService, UtilitariosService, SesionService],
+  providers: [ApiService, UtilitariosService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,205 +1,196 @@
 <app-header-web></app-header-web>
-<ngx-spinner></ngx-spinner>
+
 <section
-  style="padding: 10px; background-color: #f7f7f7; text-align: center; position: -webkit-sticky !important; position: sticky !important; top: 100px !important; z-index: 100 !important;">
-  <div>
-    <h2 class="mb-0"><b style="color: #13683b; font-size: 35px; padding-left: 15px;">Buscas Empleo</b></h2>
-  </div>
+style="padding: 10px; background-color: #f7f7f7; text-align: center; position: -webkit-sticky !important; position: sticky !important; top: 100px !important; z-index: 100 !important;">
+<div>
+  <h2 class="mb-0"><b style="color: #13683b; font-size: 35px; padding-left: 15px;">Buscas Empleo</b></h2>
+</div>
 </section>
 
 
 <section class="ftco-section testimony-section" style="background-color: #FDFDFD;">
-  <div class="container-fluid px-md-5">
-    <div class="row  ">
-      <div class="col-md-12">
-        <div class="container">
-          <div class="row block-9 justify-content-center mb-5">
-            <div class="col-md-10 mb-md-5"
-              style="padding: 25px; border: 2px solid #13683b !important; border-radius: 0.45rem !important; background-image: url('assets/images/fondoServicios.jpg');background-size: cover; color: #000000 !important;">
-
-
-              <div class="border p-5 contact-form">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div>
-                      <h2 style="text-align: center; font-size: 30px;">DEJA TUS DATOS:</h2>
-                    </div>
+<div class="container-fluid px-md-5">
+  <div class="row  justify-content-center fadeInUp d">
+    <div class="col-md-12">
+      <div class="container">
+        <div class="row block-9 justify-content-center mb-5">
+          <div class="col-md-10 mb-md-5"
+            style="padding: 25px; border: 2px solid #13683b !important; border-radius: 0.45rem !important; background-image: url('assets/images/fondoServicios.jpg');background-size: cover; color: #000000 !important;">
+            <form id="fmrCurriculum" enctype="multipart/form-data" class="border p-5 contact-form">
+              <div class="row">
+                <div class="col-md-12">
+                  <div>
+                    <h2 style="text-align: center; font-size: 30px;">DEJA TUS DATOS:</h2>
                   </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="N° Identificación" name="identificacion"
-                        [(ngModel)]="frmTrabajo.identificacion"
-                        (keyup)="frmTrabajo.identificacion = generico.formatoCampo(frmTrabajo.identificacion, '0123456789', 10, 2)">
-                    </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <span style="color: #13683b;">* Todos los campos son obligatorios</span>
                   </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Nombre Completo" name="nombre"
-                        [(ngModel)]="frmTrabajo.nombre"
-                        (keyup)="frmTrabajo.nombre = generico.formatoCampo(frmTrabajo.nombre, 'abcdefghijklmnñopqrstuvwxyzáéíóúÁÉÍÓÚABCDEFGHIJKLMNÑOPQRSTUVWXYZ ', 100, 1)">
-                    </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="N° Identificación" name="identificacion"
+                      required>
                   </div>
-                  <div class="col-md-12">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Email Personal" name="email"
-                            [(ngModel)]="frmTrabajo.email"
-                            (keyup)="frmTrabajo.email = generico.formatoCampo(frmTrabajo.email, 'abcdefghijklmnñopqrstuvwxyzáéíóúÁÉÍÓÚABCDEFGHIJKLMNÑOPQRSTUVWXYZ!:._-@¿?¡!1234567890', 50, 2)">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Teléfono Móvil" name="telefono"
-                            [(ngModel)]="frmTrabajo.telefono"
-                            (keyup)="frmTrabajo.telefono = generico.formatoCampo(frmTrabajo.telefono, '0123456789', 10, 2)">
-                        </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nombre Completo" name="nombre">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Correo Electrónico" name="email">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Dirección" name="direccion">
                       </div>
                     </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Dirección Domiciliaria" name="direccion"
-                        [(ngModel)]="frmTrabajo.direccion">
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <p>¿Tienes Conocimientos de Niifs?</p>
-                      <input type="radio" name="conocimientos" value="Si"> Si<br>
-                      <input type="radio" name="conocimientos" value="No"> No
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <p>¿Cuantos Años de Experiencia en el Área de Impuestos y Tributaria?</p>
-                      <input type="radio" name="experiencia" value="0-1 Años"> 0-1 Años<br>
-                      <input type="radio" name="experiencia" value="1-5 Años"> 1-5 Años<br>
-                      <input type="radio" name="experiencia" value="5-10 Años"> 5-10 Años<br>
-                      <input type="radio" name="experiencia" value="10-En Adelante"> 10-En Adelante
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Cuál es tu Aspiración Salarial"
-                        name="salario" [(ngModel)]="frmTrabajo.salario"
-                        (keyup)="frmTrabajo.salario = generico.formatoCampo(frmTrabajo.salario, '0123456789', 4, 2)">
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <p>¿Cuenta con Disponibilidad Inmediata?</p>
-                      <input type="radio" name="disponibilidad" value="Si"> Si<br>
-                      <input type="radio" name="disponibilidad" value="No"> No
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <p>¿Cargo para el que aplica?</p>
-                      <input type="radio" name="cargo" value="Asistente Contable"> Asistente Contable<br>
-                      <input type="radio" name="cargo" value="Asistente Administrativa"> Asistente Administrativa<br>
-                      <input type="radio" name="cargo" value="Asistente Auditoria"> Asistente Auditoria<br>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <span>Currículum</span>
-                      <input type="file" class="form-control" placeholder="Currículum" name="file"
-                        [(ngModel)]="frmTrabajo.file" id="file" (change)="obtenerCurriculum($event)"
-                        accept="application/pdf">
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <br>
-                    <div class="form-group">
-                      <input type="submit" value="Enviar Formulario" class="btn btn-primary py-3 px-5" id="btnEnviar"
-                        (click)="enviar()">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Teléfono" name="telefono">
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <p>¿Tienes Conocimientos de Niifs?</p>
+                    <input type="radio" name="conocimientos" value="Si"> Si<br>
+                    <input type="radio" name="conocimientos" value="No"> No
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <p>¿Cuantos Años de Experiencia en el Área de Impuestos y Tributaria?</p>
+                    <input type="radio" name="experiencia" value="0-1 Años"> 0-1 Años<br>
+                    <input type="radio" name="experiencia" value="1-5 Años"> 1-5 Años<br>
+                    <input type="radio" name="experiencia" value="5-10 Años"> 5-10 Años<br>
+                    <input type="radio" name="experiencia" value="10-En Adelante"> 10-En Adelante
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Cuál es tu Aspiración Salarial"
+                      name="salario">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <p>¿Cuentas con Disponibilidad Inmediata?</p>
+                    <input type="radio" name="disponibilidad" value="Si"> Si<br>
+                    <input type="radio" name="disponibilidad" value="No"> No
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <p>¿Cargo para el que aplica?</p>
+                    <input type="radio" name="cargo" value="Asistente Contable"> Asistente Contable<br>
+                    <input type="radio" name="cargo" value="Asistente Administrativa"> Asistente Administrativa<br>
+                    <input type="radio" name="cargo" value="Asistente Auditoria"> Asistente Auditoria<br>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <span>Currículum</span>
+                    <input type="file" class="form-control" placeholder="Currículum" name="file"
+                      accept="application/pdf">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <br>
+                  <div class="form-group">
+                    <input type="submit" value="Enviar Formulario" class="btn btn-primary py-3 px-5" id="btnEnviar">
+                  </div>
+                </div>
               </div>
-            </div>
+
+            </form>
           </div>
         </div>
-
       </div>
+
     </div>
   </div>
+</div>
 </section>
 
-<section class="ftco-intro ftco-no-pb img"
-  style="background-image: url(assets/images/bg_1.jpg); padding: 30px !important;">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-10 text-center heading-section heading-section-white ">
-        <h2 class="mb-0">Siempre obtienes la mejor orientación</h2>
-      </div>
+<section class="ftco-intro ftco-no-pb img" style="background-image: url(assets/images/bg_1.jpg); padding: 30px !important;">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10 text-center heading-section heading-section-white ">
+      <h2 class="mb-0">Siempre obtienes la mejor orientación</h2>
     </div>
   </div>
+</div>
 </section>
 
 <section class="ftco-section testimony-section">
-  <div class="container-fluid px-md-5">
-    <a name="contacto"></a>
-    <div class="row justify-content-center mb-5">
-      <div class="col-md-8 text-center heading-section ">
-        <h2 class="titlead">Contacto</h2>
-      </div>
+<div class="container-fluid px-md-5">
+  <a name="contacto"></a>
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-8 text-center heading-section ">
+      <h2 class="titlead">Contacto</h2>
     </div>
-    <div class="row  justify-content-center">
-      <div class="col-md-12">
+  </div>
+  <div class="row  justify-content-center">
+    <div class="col-md-12">
 
-        <div class="container">
-          <div class="row d-flex mb-5 contact-info justify-content-center" style="color: black;">
-            <div class="col-md-10">
-              <div class="row mb-5">
-                <div class="col-md-4 text-center d-flex">
-                  <div class="border w-100 p-4">
-                    <div class="icon">
-                      <span class="icon-map-o" style="font-size: 30px; color: #13683B;"></span>
-                    </div>
-                    <p><span style="font-size: 18px; color: black;"><b>Dirección:</b></span><br><a
-                        href="#direccion">Jorge
-                        Washington
-                        E4-59 y Amazonas Edif.
-                        Rocafuerte, Of. 5, sector C.C.Espiral</a>
-                    </p>
+      <div class="container">
+        <div class="row d-flex mb-5 contact-info justify-content-center" style="color: black;">
+          <div class="col-md-10">
+            <div class="row mb-5">
+              <div class="col-md-4 text-center d-flex">
+                <div class="border w-100 p-4">
+                  <div class="icon">
+                    <span class="icon-map-o" style="font-size: 30px; color: #13683B;"></span>
                   </div>
+                  <p><span style="font-size: 18px; color: black;"><b>Dirección:</b></span><br><a
+                      href="#direccion">Jorge
+                      Washington
+                      E4-59 y Amazonas Edif.
+                      Rocafuerte, Of. 5, sector C.C.Espiral</a>
+                  </p>
                 </div>
-                <div class="col-md-4 text-center d-flex">
-                  <div class="border w-100 p-4">
-                    <div class="icon">
-                      <span class="icon-tablet" style="font-size: 30px; color: #13683B"></span>
-                    </div>
-                    <p><span style="font-size: 18px;"><b>
-                          Teléfono:</b></span><br><a href="tel:+022500610">022500610, </a><a
-                        href="tel:+0997607812">0997607812</a></p>
+              </div>
+              <div class="col-md-4 text-center d-flex">
+                <div class="border w-100 p-4">
+                  <div class="icon">
+                    <span class="icon-tablet" style="font-size: 30px; color: #13683B"></span>
                   </div>
+                  <p><span style="font-size: 18px;"><b>
+                        Teléfono:</b></span><br><a href="tel:+022500610">022500610, </a><a
+                      href="tel:+0997607812">0997607812</a></p>
                 </div>
-                <div class="col-md-4 text-center d-flex">
-                  <div class="border w-100 p-4">
-                    <div class="icon">
-                      <span class="icon-envelope-o" style="font-size: 30px; color: #13683B"></span>
-                    </div>
-                    <p><span style="font-size: 18px;"><b>Correo Electrónico:</b></span><br>
-                      <a href="mailto:info@adcontur.com">info@adcontur.com</a>
-                    </p>
+              </div>
+              <div class="col-md-4 text-center d-flex">
+                <div class="border w-100 p-4">
+                  <div class="icon">
+                    <span class="icon-envelope-o" style="font-size: 30px; color: #13683B"></span>
                   </div>
+                  <p><span style="font-size: 18px;"><b>Correo Electrónico:</b></span><br>
+                    <a href="mailto:info@adcontur.com">info@adcontur.com</a></p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row block-9 justify-content-center mb-5">
-            <div class="col-md-10 mb-md-5" id="direccion">
-              <br>
+        </div>
+        <div class="row block-9 justify-content-center mb-5">
+          <div class="col-md-10 mb-md-5" id="direccion">
+            <br>
               <app-map></app-map>
-            </div>
           </div>
         </div>
-
       </div>
+
     </div>
   </div>
+</div>
 </section>
 <div id="loader" class="">Loading&#8230;</div>
 
@@ -208,82 +199,84 @@
 
 <script>
 
-  $("#btnEnviar").click(function () {
-    event.preventDefault();
+$("#btnEnviar").click(function () {
+  event.preventDefault();
+  
+  if ($("input[name*='identificacion']").val() == "") {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Validación',
+      text: 'Ingresar el numero de identificación.'
+    });
+  } else if ($("input[name*='nombre']").val() == "") {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Validación',
+      text: 'Ingresar nombre.'
+    });
+  } else if ($("input[name*='email']").val() == "") {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Validación',
+      text: 'Ingresar Email.'
+    });
+  } else if ($("input[name*='direccion']").val() == "") {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Validación',
+      text: 'Ingresar Dirección.'
+    });
+  } else if ($("input[name*='telefono']").val() == "") {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Validación',
+      text: 'Ingresar Teléfono.'
+    });
+  } else if ($("input[name*='salario']").val() == "") {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Validación',
+      text: 'Ingresar Salario.'
+    });
+  } else {
+    var form = $('#fmrCurriculum')[0];
+    var data = new FormData(form);
 
-    if ($("input[name*='identificacion']").val() == "") {
-      Swal.fire({
-        icon: 'warning',
-        title: 'Validación',
-        text: 'Ingresar el numero de identificación.'
-      });
-    } else if ($("input[name*='nombre']").val() == "") {
-      Swal.fire({
-        icon: 'warning',
-        title: 'Validación',
-        text: 'Ingresar nombre.'
-      });
-    } else if ($("input[name*='email']").val() == "") {
-      Swal.fire({
-        icon: 'warning',
-        title: 'Validación',
-        text: 'Ingresar Email.'
-      });
-    } else if ($("input[name*='direccion']").val() == "") {
-      Swal.fire({
-        icon: 'warning',
-        title: 'Validación',
-        text: 'Ingresar Dirección.'
-      });
-    } else if ($("input[name*='telefono']").val() == "") {
-      Swal.fire({
-        icon: 'warning',
-        title: 'Validación',
-        text: 'Ingresar Teléfono.'
-      });
-    } else if ($("input[name*='salario']").val() == "") {
-      Swal.fire({
-        icon: 'warning',
-        title: 'Validación',
-        text: 'Ingresar Salario.'
-      });
-    } else {
-      var form = $('#fmrCurriculum')[0];
-      var data = new FormData(form);
+    $("#loader").addClass("loading");
 
-      $("#loader").addClass("loading");
+    $.ajax({
+      type: 'POST',
+      enctype: 'multipart/form-data',
+      url: '/enviarEmailCurriculum',
+      data: data,
+      processData: false,
+      contentType: false,
+      cache: false,
+      success: function (res) {
 
-      $.ajax({
-        type: 'POST',
-        enctype: 'multipart/form-data',
-        url: '/enviarEmailCurriculum',
-        data: data,
-        processData: false,
-        contentType: false,
-        cache: false,
-        success: function (res) {
+        $("#loader").removeClass("loading").addClass("noloading");
 
-          $("#loader").removeClass("loading").addClass("noloading");
+        Swal.fire({
+          icon: 'success',
+          title: 'Éxito',
+          text: 'Se envió la solicitud de empleo.'
+        });
 
-          Swal.fire({
-            icon: 'success',
-            title: 'Éxito',
-            text: 'Se envió la solicitud de empleo.'
-          });
+      }, error: function (xhr, status) {
+        $("#loader").removeClass("loading").addClass("noloading");
 
-        }, error: function (xhr, status) {
-          $("#loader").removeClass("loading").addClass("noloading");
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Ocurrio un problema, intente nuevamente mas tarde.'
+        });
 
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Ocurrio un problema, intente nuevamente mas tarde.'
-          });
+      }
+    });
+  }
 
-        }
-      });
-    }
-
-  });
+});
 
 </script>
+
+

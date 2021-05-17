@@ -47,7 +47,7 @@
 
       </div>
       <div class="col-md-4" style="background-image: url('assets/images/notice.jpg');background-size: cover;">
-        <div style="padding: 10px;">
+        <div style="padding: 20px;">
 
           <div
             style="background-color: rgba(0, 0, 0, 0.5); padding: 25px; border-radius: 0.45rem !important; border: 1px solid #13683b !important; color: #ffffff !important;">
@@ -57,8 +57,8 @@
             </div>
 
             <div *ngFor="let tema of lstTemas">
-              <a href="/tema/detalle/{{ tema.idTema }}" style="color: #fff;">*
-                <span>
+              <a href="/detalle?idTema={{ tema.idTema }}" style="color: #fff;">*
+                <span style="font-size: 12.5px;">
                   {{ tema.titulo }}
                 </span></a>
             </div>
@@ -72,12 +72,13 @@
               <b style="color: #13683b;">SERVICIOS</b>
             </div>
 
-            <div style="text-align: justify;">
+            <div style="font-size: 12.5px;">
               <p>Recursos en línea</p>
-              <p>Utiliza nuestro Recurso en línea SRI. Consulta RUCS en <a href="/linea/detalle/1">
-                  Consulta Catastros SRI. </a> El registro es gratuito.<br></p>
+              <p>Utiliza nuestros recursos en línea, consulta de rucs en los <a href="/lineaDetalles?idRecursoLinea=1">
+                  Catastros del SRI.</a> Este servicio es gratuito.<br></p>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -593,7 +594,7 @@
           <div class="col-md-12">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Correo Electrónico" [(ngModel)]="fmrPlan.email"
-              (keyup)="fmrPlan.email = generico.formatoCampo(fmrPlan.email, 'abcdefghijklmnñopqrstuvwxyzáéíóúÁÉÍÓÚABCDEFGHIJKLMNÑOPQRSTUVWXYZ!:._-@¿?¡!1234567890', 50, 2)">
+              (keyup)="fmrPlan.email = generico.formatoCampo(fmrPlan.email, 'abcdefghijklmnñopqrstuvwxyzáéíóúÁÉÍÓÚABCDEFGHIJKLMNÑOPQRSTUVWXYZ!:._-@¿?¡!1234567890', 100, 2)">
             </div>
           </div>
           <div class="col-md-12">
@@ -604,20 +605,20 @@
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Número de Facturas Aproximadas al Mes" [(ngModel)]="fmrPlan.ventas"               
-                (keyup)="fmrPlan.ventas = generico.formatoCampo(fmrPlan.ventas, '0123456789', 6, 2)">
+              <input type="text" class="form-control" placeholder="Número de Facturas Aproximadas al Mes"
+                [(ngModel)]="fmrPlan.ventas">
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Número de Compras Aproximadas al Mes" [(ngModel)]="fmrPlan.compras"
-              (keyup)="fmrPlan.compras = generico.formatoCampo(fmrPlan.compras, '0123456789', 6, 2)">
+              <input type="text" class="form-control" placeholder="Número de Compras Aproximadas al Mes"
+                [(ngModel)]="fmrPlan.compras">
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Número de Empleados Afiliados" [(ngModel)]="fmrPlan.afiliados"
-              (keyup)="fmrPlan.afiliados = generico.formatoCampo(fmrPlan.afiliados, '0123456789', 6, 2)">
+              <input type="text" class="form-control" placeholder="Número de Empleados Afiliados"
+                [(ngModel)]="fmrPlan.afiliados">
             </div>
           </div>
         </div>

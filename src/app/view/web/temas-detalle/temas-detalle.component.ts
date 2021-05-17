@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { UtilitariosService } from 'src/app/metodos/utilitarios/utilitarios.service';
 import { ApiService } from 'src/app/servicios/api/api.service';
-import { SesionService } from 'src/app/servicios/sesion/sesion.service';
 import { environment } from 'src/environments/environment';
 declare var $: any;
 
@@ -17,15 +15,10 @@ export class TemasDetalleComponent implements OnInit {
   urls: any;
   idTema = 0;
   dtTema: any;
-  divArchivo = "none";
-  mensaje = true;
-  constructor(private conexion: ApiService, private router:
-     ActivatedRoute, private spinner: NgxSpinnerService, private sesion: SesionService,
-     public generico: UtilitariosService) {
-  }
+
+  constructor(private conexion: ApiService, private router: ActivatedRoute, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
-
     this.idTema = parseInt(this.router.snapshot.params.id);
     this.urls = environment;
     this.consultarTema();
@@ -43,8 +36,6 @@ export class TemasDetalleComponent implements OnInit {
           $("#tituloTema").html(this.dtTema.titulo);
           $("#tipoTema").html(this.dtTema.nombre);
           $("#descripcionTema").html(this.dtTema.descripcion);
-
-          this.gestionArchivos();
 
         } else {
           alert("Error en el servicio");
@@ -98,18 +89,5 @@ width: 100%;">
   </table>
 </footer>`
     });
-  }
-
-
-  gestionArchivos() {
-    var datosSesion = this.sesion.obtenerDatos();
-    if(datosSesion != undefined){
-      this.divArchivo = "auto";
-      this.mensaje = false
-    }else{
-      this.divArchivo = "none";
-      this.mensaje = true;
-      
-    }
   }
 }

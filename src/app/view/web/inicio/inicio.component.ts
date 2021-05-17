@@ -3,7 +3,6 @@ import { ApiService } from 'src/app/servicios/api/api.service';
 import { environment } from 'src/environments/environment';
 import { NgxSpinnerService } from "ngx-spinner";
 import { UtilitariosService } from 'src/app/metodos/utilitarios/utilitarios.service';
-import { Router } from '@angular/router';
 
 declare var $: any;
 
@@ -19,7 +18,6 @@ export class InicioComponent implements OnInit {
   lstServicios = [];
   plan = "";
   precio = 0;
-  
   fmrPlan = {
     nombre: "",
     email: "",
@@ -29,7 +27,7 @@ export class InicioComponent implements OnInit {
     afiliados: ""
   };
 
-  constructor(private conexion: ApiService, private spinner: NgxSpinnerService, public generico: UtilitariosService,private router: Router) { }
+  constructor(private conexion: ApiService, private spinner: NgxSpinnerService, public generico: UtilitariosService) { }
 
   ngOnInit(): void {
     this.urls = environment;
@@ -94,16 +92,15 @@ export class InicioComponent implements OnInit {
           this.spinner.hide();
           console.log(res);
           if (res.tipo == 1) {
-            this.generico.alerta("success", "Planes", "Solicitud Enviada Exitosamente.");
+            alert("Solicitud enviada exitosamente, si el correo no le llega, asegurese de revisar SPAM o CORREOS NO DESEADOS");
             this.limpiar();
             $('#modalPlanes').modal('toggle');
           } else {
-            this.generico.alerta("warning", "Planes", "Error al enviar la solicitud, intente nuevamente mas tarde.");
+            alert("Error en el servicio");
           }
         },
         err => {
           this.spinner.hide();
-          this.generico.alerta("warning", "Planes", "Error al enviar la solicitud, intente nuevamente mas tarde.");
           console.log(err);
         }
       );
@@ -112,24 +109,16 @@ export class InicioComponent implements OnInit {
 
   public validacion() {
     if (this.fmrPlan.nombre == "") {
-      this.generico.notificacion("warning", "Ingresar un nombre completo");
+      alert("Ingresar un nombre");
       return false;
     } if (!this.generico.validarEmail(this.fmrPlan.email)) {
-      this.generico.notificacion("warning", "Ingresar un email válido");    
+      alert("Ingresar un email válido");
       return false;
     }if (this.fmrPlan.telefono == "") {
-      this.generico.notificacion("warning", "Ingresar un número teléfonico");
-      return false;
-    }if (this.fmrPlan.ventas == "") {
-      this.generico.notificacion("warning", "Ingresar un número de facturas aproximadas al mes");    
-      return false;
-    }if (this.fmrPlan.compras == "") {
-      this.generico.notificacion("warning", "Ingresar un número de compras aproximadas al mes");     
-      return false;
-    }if (this.fmrPlan.afiliados == "") {
-      this.generico.notificacion("warning", "Ingresar un número de empleados afiliados");
+      alert("Ingresar un número de teléfono");
       return false;
     }
+
     return true;
   }
 
@@ -142,11 +131,6 @@ export class InicioComponent implements OnInit {
       compras: "",
       afiliados: ""
     };
-  }
-
-  detalleTema(detalle) {
-    this.router.navigate(['/tema/detalle/' + detalle.idTema]);
-    console.log(detalle);
   }
 
 }
