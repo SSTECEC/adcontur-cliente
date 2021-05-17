@@ -16,15 +16,18 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <div class="row">
+          <div *ngIf="mensaje" class="col-md-12" style="text-align: left !important;">
+            <b>NOTA:</b>&nbsp;&nbsp;Para descargar los enlaces de los temas, tiene que <a href="/login">REGISTRARSE</a> O <a href="/login">INICIAR SESIÓN</a>.
+          </div>
           <div id="imprimible" class="col-md-8 wrap-about ftco-animate py-md-5 pl-md-5 fadeInUp ftco-animated"
-            style="padding: 48px; border: 2px solid #13683b !important; border-radius: 0.45rem !important; background-image: url('assets/images/fondoServicios.jpg'); background-size: cover; color: #000000 !important;">
+            style="margin-top: 15px; padding: 48px; border: 2px solid #13683b !important; border-radius: 0.45rem !important; background-image: url('assets/images/fondoServicios.jpg'); background-size: cover; color: #000000 !important;">
             <div class="heading-section mb-4">
               <h2 id="tituloTema" style="font-size: 26px;">Titulo</h2>
             </div>
             <p style="text-align: left; font-weight: bold;" id="tipoTema">
               Tipo
             </p>
-            <div id="descripcionTema"></div>
+            <div [ngStyle]="{'pointer-events': divArchivo, 'user-select': 'none'}" id="descripcionTema"></div>
           </div>
           <div class="col-md-1" style="padding: 0px !important; margin: 0px !important;"></div>
           <div class="col-md-3 wrap-about ftco-animate py-md-5 pl-md-5 fadeInUp ftco-animated"
@@ -66,7 +69,8 @@
                 </span>
 
                 &nbsp;&nbsp;
-                <a style="cursor: pointer;" (click)="imprimirTema()" id="btnImprimirParrafo" style="font-size: 30px; cursor: pointer;" target="_blank">
+                <a style="cursor: pointer;" (click)="imprimirTema()" id="btnImprimirParrafo"
+                  style="font-size: 30px; cursor: pointer;" target="_blank">
                   <img src="assets/images/printer.png" alt="Imprimir" width="28">
                 </a>
                 &nbsp;&nbsp;

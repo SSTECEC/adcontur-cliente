@@ -1,1 +1,300 @@
-<p>linea-detalle works!</p>
+<app-header-web></app-header-web>
+
+<ngx-spinner></ngx-spinner>
+
+<section
+  style="padding: 10px; background-color: #f7f7f7; text-align: center; position: -webkit-sticky !important; position: sticky !important; top: 100px !important; z-index: 100 !important;">
+  <div>
+    <h2 class="mb-0"><b style="color: #13683b; font-size: 36px; padding-left: 15px;">Recursos en línea SRI</b></h2>
+  </div>
+</section>
+
+<section class="ftco-section ftco-about ftco-no-pt ftco-no-pb ftco-counter" id="section-counter"
+  style="background-color: #FDFDFD;">
+  <div class="container consult-wrap">
+    <br>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="row">
+
+          <div *ngIf="paneles.panel1" class="col-md-12">
+            <div style="border: 1px solid #dddddd; border-radius: 4px;">
+              <div
+                style="color: #13683B !important; background: #00000008; padding: 15px; text-align: left !important; padding-left: 20px !important; padding-right: 20px !important; font-size: 20px;">
+                <b>Consulta Catastros SRI</b>
+              </div>
+              <div style="padding: 15px; text-align: left !important; padding-left: 20px !important; padding-right: 20px !important;">
+              
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Ingrese Número de RUC" [(ngModel)]="ruc"
+                  (keyup)="ruc = generico.formatoCampo(ruc, '0123456789', 13, 2)">
+                </div>
+
+                <button type="button" class="btn btn-primary py-3 px-5" (click)="consultarCatastro()">Buscar</button>
+                <div *ngIf="dtCatastro != undefined">
+                  <br><br>
+                  <table class="table table-bordered">
+                    <tbody style="font-size: 17px !important; border: 2px solid #333 !important;">
+                      <tr>
+                        <td style="width: 30%;">
+                          <b style="color: #13683b;">Microempresa</b>
+                        </td>
+                        <td>
+                          <span id="MICROEMPRESA">{{ dtCatastro.contribuyente_microempresa }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b style="color: #13683b">Clase De Contribuyente</b>
+                        </td>
+                        <td>
+                          <span id="ESPECIAL">{{ dtCatastro.clase_contribuyente }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b style="color: #13683b;">Empresa Fantasma</b>
+                        </td>
+                        <td>
+                          <span id="FANTASMA">{{ dtCatastro.contribuyente_fantasma }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b style="color: #13683b;">Agente De Retencion</b>
+                        </td>
+                        <td>
+                          <span id="RETENCION">{{ dtCatastro.agente_retencion }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b style="color: #13683b;">Razón Social</b>
+                        </td>
+                        <td>
+                          <span id="RAZON_SOCIAL">{{ dtCatastro.razon_social }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b style="color: #13683b;">Ruc</b>
+                        </td>
+                        <td>
+                          <span id="RUC">{{ dtCatastro.ruc }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b style="color: #13683b;">Nombre Comercial</b>
+                        </td>
+                        <td>
+                          <span id="NOMBRE_COMERCIAL">{{ dtCatastro.nombre_comercial }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b style="color: #13683b;">Representante Legal Nombre</b>
+                        </td>
+                        <td>
+                          <span id="REPRESENTANTE">{{ dtCatastro.representante_legal_nombre }}</span>
+                        </td>
+                      </tr>                                     
+                      <tr>
+                        <td>
+                          <b style="color: #13683b;">Representante Legal Cédula</b>
+                        </td>
+                        <td>
+                          <span id="REPRESENTANTE_CEDULA">{{ dtCatastro.representante_legal_cedula_ruc }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b style="color: #13683b;">Estado del Contribuyente</b>
+                        </td>
+                        <td>
+                          <span id="ESTADO_CONTRIBUYENTE">{{ dtCatastro.estado_contribuyente }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b style="color: #13683b;">Tipo de Contribuyente</b>
+                        </td>
+                        <td>
+                          <span id="TIPO_CONTRIBUYENTE">{{ dtCatastro.tipo_contribuyente }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b style="color: #13683b;">Obligado A Llevar Contabilidad</b>
+                        </td>
+                        <td>
+                          <span id="OBLIGADO">{{ dtCatastro.obligado_llevar_contabilidad }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b style="color: #13683b;">Actividad Principal</b>
+                        </td>
+                        <td>
+                          <span id="ACTIVIDAD_ECONOMICA">{{ dtCatastro.actividad_economica_principal }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b style="color: #13683b;">Fecha De Inicio RUC</b>
+                        </td>
+                        <td>
+                          <span id="FECHA_INICIO_ACTIVIDADES">{{ dtCatastro.fecha_inicio_actividades }}</span>
+                        </td>
+                      </tr>     
+                      <tr>
+                        <td>
+                          <b style="color: #13683b;">Fecha De Cese RUC</b>
+                        </td>
+                        <td>
+                          <span id="FECHA_CESE">{{ dtCatastro.fecha_cese_actividades }}</span>
+                        </td>
+                      </tr> 
+                      <tr>
+                        <td>
+                          <b style="color: #13683b;">Fecha De Reinicio RUC</b>
+                        </td>
+                        <td>
+                          <span id="FECHA_REINICIO">{{ dtCatastro.fecha_reinicio_actividades }}</span>
+                        </td>
+                      </tr>     
+                       <tr>
+                        <td>
+                          <b style="color: #13683b;">Dirección RUC</b>
+                        </td>
+                        <td>
+                          <span id="UBICACION">{{ dtCatastro.matriz_ubicacion }}</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+
+                <br><br>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="paneles.panel2" class="col-md-12">
+            <img src="../../../../assets/images/contruccion.png" alt="" style="width: 100% !important;">
+          </div>
+
+          <div *ngIf="paneles.panel3" class="col-md-12">
+            <img src="../../../../assets/images/contruccion.png" alt="" style="width: 100% !important;">
+          </div>
+
+          <div *ngIf="paneles.panel4" class="col-md-12">
+            <img src="../../../../assets/images/contruccion.png" alt="" style="width: 100% !important;">
+          </div>
+
+          <div *ngIf="paneles.panel5" class="col-md-12">
+            <img src="../../../../assets/images/contruccion.png" alt="" style="width: 100% !important;">
+          </div>
+
+          <div *ngIf="paneles.panel6" class="col-md-12">
+            <img src="../../../../assets/images/contruccion.png" alt="" style="width: 100% !important;">
+          </div>
+
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="ftco-intro ftco-no-pb img"
+  style="background-image: url(assets/images/bg_1.jpg); padding: 30px !important;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10 text-center heading-section heading-section-white">
+        <h2 class="mb-0">Siempre obtienes la mejor orientación</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section testimony-section">
+  <div class="container-fluid px-md-5">
+    <a name="Contacto"></a>
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center heading-section">
+        <h2 class="mb-4">Contacto</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="container">
+          <div class="row d-flex mb-5 contact-info justify-content-center" style="color: black;">
+            <div class="col-md-10">
+              <div class="row mb-5">
+
+                <div class="col-md-4 text-center d-flex">
+
+                  <div class="border w-100 p-4">
+                    <div class="icon"><span class="icon-map-o" style="font-size: 30px; color: #13683B;"></span></div>
+                    <p>
+                      <span style="font-size: 18px; color: black;"><b>Dirección:</b></span>
+                      <br>
+                      <a href="#direccion">Jorge Washington E4-59 y Amazonas Edif. Rocafuerte, Of.
+                        5, sector
+                        C.C.Espiral</a>
+                    </p>
+                  </div>
+
+                </div>
+
+                <div class="col-md-4 text-center d-flex">
+
+                  <div class="border w-100 p-4">
+                    <div class="icon"><span class="icon-map-o" style="font-size: 30px; color: #13683B;"></span></div>
+                    <p>
+                      <span style="font-size: 18px; color: black;"><b>Teléfono:</b></span>
+                      <br>
+                      <a href="tel:+022500610">022500610,</a>
+                      <a href="tel:+0997607812">0997607812</a>
+                    </p>
+                  </div>
+
+                </div>
+
+                <div class="col-md-4 text-center d-flex">
+
+                  <div class="border w-100 p-4">
+                    <div class="icon"><span class="icon-envelope-o" style="font-size: 30px; color: #13683B"></span>
+                    </div>
+                    <p>
+                      <span style="font-size: 18px; color: black;"><b>Correo
+                          Electrónico::</b></span>
+                      <br>
+                      <a href="mailto:info@adcontur.com">info@adcontur.com</a>
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="row block-9 justify-content-center mb-5">
+                <div class="col-md-10 mb-md-5" id="direccion">
+                  <br>
+                  <app-map></app-map>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

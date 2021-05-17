@@ -1,5 +1,5 @@
 <app-header-web></app-header-web>
-
+<ngx-spinner></ngx-spinner>
   <section class="arriba">
     <div>
       <table style="width: 100%;">
@@ -22,7 +22,8 @@
       <div class="row tabulation mt-4 ">
 
         <div class="col-md-7"
-          style="padding: 25px; border: 2px solid #13683b !important; border-radius: 0.45rem !important; background-image: url('assets/images/fondoServicios.jpg');background-size: cover; color: #000000 !important;">
+          style="padding: 25px; border: 2px solid #13683b !important; border-radius: 0.45rem !important; background-image: url('assets/images/fondoServicios.jpg');background-size: cover; 
+          color: #000000 !important; text-align: justify;">
 
           <div id="descripcionCompletaServicio" [innerHTML]="dtServicio?.descripcion_completa"></div>
 
@@ -46,7 +47,7 @@
             <hr>
             <span><b>Teléfonos</b></span><br>
 
-            <a href="tel:+022500610">022500610,</a>
+            <a href="tel:+022500610">022500610,&nbsp;</a>
             <a href="tel:+0997607812">0997607812</a>
             <hr>
 
@@ -88,30 +89,33 @@
                       <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Nombre Completo">
+                            <input type="text" class="form-control" placeholder="Nombre Completo" [(ngModel)]="fmrConsulta.nombre" [ngModelOptions]="{standalone: true}"
+                            (keyup)="fmrConsulta.nombre = generico.formatoCampo(fmrConsulta.nombre, 'abcdefghijklmnñopqrstuvwxyzáéíóúÁÉÍÓÚABCDEFGHIJKLMNÑOPQRSTUVWXYZ ', 100, 1)">
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Correo Electrónico">
+                            <input type="text" class="form-control" placeholder="Correo Electrónico" [(ngModel)]="fmrConsulta.email" [ngModelOptions]="{standalone: true}"
+                            (keyup)="fmrConsulta.email = generico.formatoCampo(fmrConsulta.email, 'abcdefghijklmnñopqrstuvwxyzáéíóúÁÉÍÓÚABCDEFGHIJKLMNÑOPQRSTUVWXYZ!:._-@¿?¡!1234567890', 50, 2)">
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Teléfono/Celular">
+                            <input type="text" class="form-control" placeholder="Teléfono/Celular" [(ngModel)]="fmrConsulta.telefono" [ngModelOptions]="{standalone: true}"
+                            (keyup)="fmrConsulta.telefono = generico.formatoCampo(fmrConsulta.telefono, '0123456789', 10, 2)">
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
-                        <textarea class="form-control" rows="3" placeholder="Escriba su mensaje"></textarea>
+                        <textarea class="form-control" rows="3" placeholder="Escriba su mensaje" [(ngModel)]="fmrConsulta.mensaje" [ngModelOptions]="{standalone: true}"></textarea>
                       </div>
                     </div>
                     <div class="col-md-12">
                       <br>
                       <div class="form-group">
-                        <input type="submit" value="Contactar" class="btn btn-primary py-3 px-5">
+                        <input type="submit" value="Contactar" class="btn btn-primary py-3 px-5" (click)="contactar()">
                       </div>
                     </div>
                   </div>

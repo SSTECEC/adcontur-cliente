@@ -1,0 +1,14 @@
+<header *ngIf="vista" style="border-bottom: 1px solid #CCCCCC;">
+  <div class="container">
+   <div class="row" style="padding: 10px;">
+
+    <div class="col-md-9">
+      <img src="../../../../../assets/images/profile-user.png" height="25" alt=""> {{ datosSesion.Usuario }}
+    </div>
+
+    <div class="col-md-3" style="text-align: right; cursor: pointer;" (click)="cerrarSesion()">
+      <img src="../../../../../assets/images/logout.png" height="25" alt="">
+    </div>
+   </div>
+  </div>
+</header>
