@@ -1,0 +1,41 @@
+<app-header-web></app-header-web>
+<ngx-spinner></ngx-spinner>
+<div class="body">
+    <div class="form-structor">
+        <div id="registro" class="signup slide-up">
+            <h2 class="form-title" id="signup" (click)="registro()">Registrarse</h2>
+            <div class="form-holder">
+                <select class="form-control" name="profile" id="profile" [(ngModel)]="fmrRegistro.Rol">
+                    <option value="-1" selected="selected">¿Quién eres?</option>
+                    <option value="EMPRESARIO">Empresario</option>
+                    <option value="CONTADOR">Contador</option>
+                    <option value="ESTUDIANTE">Estudiante</option>
+                    <option value="ASISTENTE_CONTABLE">Asistente Contable</option>
+                </select>
+                <input type="text" [(ngModel)]="fmrRegistro.Identificacion" class="input" placeholder="Numero de Cédula" 
+                (keyup)="fmrRegistro.Identificacion = generico.formatoCampo(fmrRegistro.Identificacion, '0123456789', 10, 2)"/>  
+                <input type="text" [(ngModel)]="fmrRegistro.Usuario" class="input" placeholder="Nombres y Apellidos"
+                (keyup)="fmrRegistro.Usuario = generico.formatoCampo(fmrRegistro.Usuario, 'abcdefghijklmnñopqrstuvwxyzáéíóúÁÉÍÓÚABCDEFGHIJKLMNÑOPQRSTUVWXYZ ', 100, 1)" />
+                <input type="email" [(ngModel)]="fmrRegistro.Email" class="input" placeholder="Email" 
+                (keyup)="fmrRegistro.Email = generico.formatoCampo(fmrRegistro.Email, 'abcdefghijklmnñopqrstuvwxyzáéíóúÁÉÍÓÚABCDEFGHIJKLMNÑOPQRSTUVWXYZ!:._-@¿?¡!1234567890', 50, 2)"/>
+                <input type="text" [(ngModel)]="fmrRegistro.Celular" class="input" placeholder="Numero de Celular" 
+                (keyup)="fmrRegistro.Celular = generico.formatoCampo(fmrRegistro.Celular, '0123456789', 10, 2)"/>               
+                <input type="password" [(ngModel)]="fmrRegistro.Password" class="input" placeholder="Contraseña"/>
+
+            </div>
+            <button class="submit-btn" (click)="Registro()">Registro</button>
+        </div>
+        <div id="login" class="login">
+            <div class="center">
+                <h2 class="form-title" id="login" (click)="inicio()">Iniciar Sesión</h2>
+                <div class="form-holder">
+                    <input type="email" [(ngModel)]="fmrLogin.Email" class="input" placeholder="Email" />
+                    <input type="password" [(ngModel)]="fmrLogin.Password" class="input" placeholder="Contraseña" />
+                </div>
+                <button class="submit-btn" (click)="iniciarSesion()">Ingresar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

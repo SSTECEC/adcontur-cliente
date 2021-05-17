@@ -33,14 +33,14 @@
               [pageable]="true" filterable="menu" (sortChange)="sortChange($event)" (groupChange)="groupChange($event)"
               (dataStateChange)="dataStateChange($event)">
 
-              <kendo-grid-column field="titulo" title="Buscar tema de interés">
+              <kendo-grid-column field="titulo" title="Buscar Tema de Interés">
                 <ng-template kendoGridCellTemplate let-dataItem>
 
                   <div
                     style="border: 1px solid #EDEDED; border-radius: 4px; padding: 20px; background-color: #fff; cursor: pointer;"
                     (click)="detalleTema(dataItem)">
-                    <p>{{ dataItem.Fecha }}</p>
-                    <b style="color: #13683B;">{{ dataItem.titulo }}</b>
+                    <p style="color: #84928b; font-size: 18px;">{{ dataItem.Fecha }}</p>
+                    <b style="color: #13683B; font-size: 18px;">{{ dataItem.titulo }}</b>
                   </div>
 
                 </ng-template>
